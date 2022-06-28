@@ -9,6 +9,8 @@ public class PaddleController : MonoBehaviour
     //variabel untuk padel kanan dan kiri sehingga dapat bergerak sendiri2 
     public KeyCode upKey;
     public KeyCode downKey;
+    public KeyCode leftKey;
+    public KeyCode rightKey;
 
     private Rigidbody2D rig;
     void Start()
@@ -39,6 +41,14 @@ public class PaddleController : MonoBehaviour
         {
             //Gerakan kebawah
             return Vector2.down * speed;
+        }
+        else if(Input.GetKey(leftKey))
+        {
+            return Vector2.left * speed;
+        }
+        else if(Input.GetKey(rightKey))
+        {
+            return Vector2.right * speed;
         }
         //untuk memberhetikan paddle
         return Vector2.zero;
